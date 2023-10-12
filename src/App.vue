@@ -9,7 +9,6 @@ import ContainerCards from './components/ContainerCards.vue';
       Header,
       ContainerCards
     }
-  
   }
 </script>
 

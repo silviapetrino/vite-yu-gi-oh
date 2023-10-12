@@ -1,15 +1,22 @@
 <script>
+
 export default {
-  name: "singol-card"
+  name: "singol-card",
+
+  props: {
+    imgObj: Object,
+    titleObj: String,
+    typeObj: String
+  }
 }
 </script>
 
 <template>
 
     <div class="card-sp">
-      <img src="#" alt="">
-      <h5>title</h5>
-      <h6>type</h6>
+      <img :src="imageObj" :alt="titleObj">
+      <h5> {{ titleObj }} </h5>
+      <h6> {{ typeObj }} </h6>
     </div>
 
 

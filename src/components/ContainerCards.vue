@@ -1,6 +1,5 @@
 <script>
-import singolCard
- from './partials/singolCard.vue';
+import singolCard from './partials/singolCard.vue';
 export default {
   name: "card-container",
   components: {
