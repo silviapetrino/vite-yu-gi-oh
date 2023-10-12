@@ -14,7 +14,7 @@ export default {
 <template>
 
     <div class="card-sp">
-      <img :src="imageObj" :alt="titleObj">
+      <img :src="imgObj">
       <h5> {{ titleObj }} </h5>
       <h6> {{ typeObj }} </h6>
     </div>

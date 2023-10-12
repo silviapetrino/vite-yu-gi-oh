@@ -28,7 +28,8 @@ import axios from 'axios';
 
       axios.get(apiUrlWithOffset)
         .then((result) => {
-          store.cardList = result.data;
+          store.cardList = result.data.data;
+          console.log(store.cardList.data);
         })
         .catch((error) => {
           console.error('Errore');
@@ -38,6 +39,7 @@ import axios from 'axios';
 
     mounted(){
       this.getApi()
+      console.log(store.apiUrlWithOffset)
      
     }
   }

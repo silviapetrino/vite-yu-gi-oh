@@ -26,7 +26,7 @@ export default {
     <div class="row">
 
       <singolCard v-for="singolCard in store.cardList" :key="singolCard.id"
-      
+      :imgObj="singolCard.card_images[0].image_url_small"
       :titleObj="singolCard.name"
       :typeObj="singolCard.archetype"
       
