@@ -1,0 +1,13 @@
+
+@use './vars' as *;
+@import "bootstrap/scss/bootstrap";
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/700.css';
+
+
+
+body {
+  background-color: $primary-color;
+  font-family: 'Roboto', sans-serif;
+}
+
