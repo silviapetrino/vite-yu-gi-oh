@@ -36,7 +36,7 @@ import axios from 'axios';
 
     mounted(){
       this.getApi()
-      console.log(this.offset)
+     
     }
   }
 </script>

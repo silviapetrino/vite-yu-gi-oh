@@ -1,9 +1,14 @@
 <script>
 import singolCard from './partials/singolCard.vue';
+import { store } from '../data/store';
+
 export default {
   name: "card-container",
   components: {
     singolCard
+  },
+  data(){
+    store
   }
 }
 </script>
@@ -14,7 +19,9 @@ export default {
   <div class="container">
     <div class="row">
 
-      <singolCard />
+      <singolCard v-for="singolCard in store.cardList" :key="singolCard.id"
+      :titleObj="singolCard.name"
+      />
   
     </div>
     

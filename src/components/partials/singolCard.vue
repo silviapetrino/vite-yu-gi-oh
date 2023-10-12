@@ -27,8 +27,15 @@ export default {
 <style lang="scss" scoped>
 
 .card-sp {
+  background-color: #CE8E2E;
   border: 1px solid black;
   width: calc(100% / 5);
+  h5 {
+    color: white;
+  }
+  h6 {
+    color: black;
+  }
 }
 
 </style>
