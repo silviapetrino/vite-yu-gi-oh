@@ -19,6 +19,8 @@ import axios from 'axios';
       
       }
     },
+ 
+    
     methods: {
     getApi() {
       

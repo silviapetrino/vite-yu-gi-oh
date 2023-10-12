@@ -9,6 +9,9 @@ export default {
   },
   data(){
     store
+  },
+  mounted(){
+    console.log(store)
   }
 }
 </script>
