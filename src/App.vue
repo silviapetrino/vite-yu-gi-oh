@@ -26,5 +26,8 @@ import ContainerCards from './components/ContainerCards.vue';
 
 @use "./scss/main.scss" as *;
 
+body {
+  background-color: #CE8E2E;
+}
 
 </style>

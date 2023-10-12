@@ -16,10 +16,11 @@ export default {
 
 
 <style lang="scss" scoped>
-@use '../scss/partials/vars' as *;
+
 
 header {
-  background-color: $secondary-color;
+  background-color: white;
+
   h1 {
     font-size: 2rem;
   }
