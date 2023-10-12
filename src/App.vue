@@ -15,7 +15,7 @@ import axios from 'axios';
     data(){
       return{
         store,
-        offset: Math.floor(Math.random() * 12810) + 1,
+        offset: Math.floor(Math.random() * 1000) + 1,
         apiUrlWithOffset : `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=${this.offset}`
       }
     },
