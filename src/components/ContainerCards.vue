@@ -8,11 +8,14 @@ export default {
     singolCard
   },
   data(){
-    store
+    return {
+      store
+    }
   },
   mounted(){
-    console.log(store)
+    console.log(singolCard.name)
   }
+ 
 }
 </script>
 
@@ -23,7 +26,10 @@ export default {
     <div class="row">
 
       <singolCard v-for="singolCard in store.cardList" :key="singolCard.id"
+      
       :titleObj="singolCard.name"
+      :typeObj="singolCard.archetype"
+      
       />
   
     </div>

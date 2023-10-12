@@ -4,7 +4,7 @@ export default {
   name: "singol-card",
 
   props: {
-    imgObj: Object,
+    imgObj: String,
     titleObj: String,
     typeObj: String
   }
