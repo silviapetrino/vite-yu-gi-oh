@@ -1,13 +1,25 @@
 <script>
+import singolCard
+ from './partials/singolCard.vue';
 export default {
-
+  name: "card-container",
+  components: {
+    singolCard
+  }
 }
 </script>
 
 
 <template>
 
-  <div class="container">a</div>
+  <div class="container">
+    <div class="row">
+
+      <singolCard />
+  
+    </div>
+    
+  </div>
   
 </template>
 
@@ -18,9 +30,12 @@ export default {
 
 .container {
   margin: 100px auto;
-  padding-top: 80px;
   width: 80%;
   background-color: rgb(255, 255, 255);
+  .row {
+    justify-content: space-between;
+    flex-direction: flex-start;
+  }
 }
 
 </style>
