@@ -27,11 +27,22 @@ export default {
 <style lang="scss" scoped>
 
 .card-sp {
+  margin: 10px 10px;
   background-color: #CE8E2E;
-  border: 1px solid black;
-  width: calc(100% / 5);
+  width: calc(100% / 5 - 20px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+
+  h5, h6 {
+    text-transform: uppercase;
+  }
   h5 {
     color: white;
+    font-size: 1rem;
+    font-weight: 700;
   }
   h6 {
     color: black;
