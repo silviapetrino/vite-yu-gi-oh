@@ -5,18 +5,21 @@ import Header from './components/Header.vue';
 import ContainerCards from './components/ContainerCards.vue';
 import { store } from './data/store';
 import axios from 'axios';
+import loader from './components/partials/loader.vue';
 
   export default {
     name: "AppVue",
     components: {
       Header,
-      ContainerCards
+      ContainerCards,
+      loader,
+
     },
     data(){
       return{
         store,
         offset: Math.floor(Math.random() * 1000) + 1,
-      
+
       }
     },
  
@@ -30,16 +33,18 @@ import axios from 'axios';
         .then((result) => {
           store.cardList = result.data.data;
           console.log(store.cardList.data);
+         
         })
         .catch((error) => {
           console.error('Errore');
+       
         });
     }
   },
 
     mounted(){
       this.getApi()
-      console.log(store.apiUrlWithOffset)
+      
      
     }
   }
@@ -48,6 +53,7 @@ import axios from 'axios';
 
 <template>
   
+  <loader />
   <Header />
   <ContainerCards />
 
