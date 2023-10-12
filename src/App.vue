@@ -16,19 +16,23 @@ import axios from 'axios';
       return{
         store,
         offset: Math.floor(Math.random() * 1000) + 1,
-        apiUrlWithOffset : `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=${this.offset}`
+      
       }
     },
     methods: {
+    getApi() {
+      
+      const apiUrlWithOffset = `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=${this.offset}`;
 
-      getApi(){
-        axios.get(store.apiUrl)
-        store.apiUrl = this.apiUrlWithOffset
+      axios.get(apiUrlWithOffset)
         .then((result) => {
-          store.cardList = result.data
+          store.cardList = result.data;
         })
-      }
-    },
+        .catch((error) => {
+          console.error('Errore');
+        });
+    }
+  },
 
     mounted(){
       this.getApi()
