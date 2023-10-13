@@ -36,7 +36,6 @@ import axios from 'axios';
       }) 
         .then((result) => {
           store.cardList = result.data.data;
-          // console.log(store.cardList);
           store.isLoading = false
         })
         .catch((error) => {

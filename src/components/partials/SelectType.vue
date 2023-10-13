@@ -1,5 +1,4 @@
 
-
 <script>
 import axios from 'axios';
 import { store } from '../../data/store';
@@ -30,8 +29,7 @@ export default {
 <template>
 
 <select class="form-select form-select-sm" aria-label="Small select example">
-  <option selected>Select type</option>
-  <option v-for="(type, index) in store.listOftypes" :key="`type${index}`" value="1">{{ type.archetype_name }}</option>
+  <option @click="$emit('searchTypeGo')" v-for="(type, index) in store.listOftypes" :key="`type${index}`" value="1">{{ type.archetype_name }}</option>
 </select>
   
 
