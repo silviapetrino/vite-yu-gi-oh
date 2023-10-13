@@ -20,18 +20,14 @@ export default {
   },
   methods: {
     filterTypeSelected() {
-      let url = this.store.apiUrl;
+      let url = this.store.apiUrl + "?archetype=" + this.store.selectedType;
 
-      if(this.store.selectedType === " ") {
+      if(this.store.selectedType === null) {
         this.url = this.store.apiUrl 
       } else {
         this.url = this.store.apiUrl + "?archetype=" + this.store.selectedType;
       }
-
-      axios.get(url)
-      .then((response) => {
-        
-      } )
+      console.log(this.url)
       
     }
   },
