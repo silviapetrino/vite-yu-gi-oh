@@ -7,11 +7,7 @@ export default {
       isLoading: true
     }
   },
-  methods: {
-    stopLoad(){
-      this.isLoading = false;
-    }
-  }
+
  
 }
 

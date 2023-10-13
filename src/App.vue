@@ -17,8 +17,7 @@ import loader from './components/partials/loader.vue';
     },
     data(){
       return{
-        store,
-        offset: Math.floor(Math.random() * 1000) + 1,
+        store
 
       }
     },
@@ -27,18 +26,20 @@ import loader from './components/partials/loader.vue';
     methods: {
     getApi() {
       
-      const apiUrlWithOffset = `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=${this.offset}`;
-
-      axios.get(apiUrlWithOffset)
+      axios.get(store.apiUrl, {
+        params: {
+          archetype: "alien"
+        }
+      }) 
         .then((result) => {
           store.cardList = result.data.data;
-          console.log(store.cardList.data);
-         
+          console.log(store.cardList);
+          store.isLoading = false
         })
         .catch((error) => {
-          console.error('Errore');
-       
-        });
+          error.data = "Pagina non trovata";
+          store.isLoading = false
+        })
     }
   },
 
@@ -52,9 +53,9 @@ import loader from './components/partials/loader.vue';
 
 
 <template>
-  
-  <loader />
+
   <Header />
+  <loader v-if="store.isLoading" />
   <ContainerCards />
 
 </template>
