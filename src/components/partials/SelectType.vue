@@ -15,10 +15,23 @@ export default {
       axios.get(store.apiUrlType)
       .then((res) => {
         store.listOftypes = res.data
-        console.log(store.listOftypes)
+        // console.log(store.listOftypes)
+      })
+    },
+
+    changeType() {
+      console.log(this.store.selectedType)
+      axios.get(store.apiUrlType)
+      .then((res) => {
+        store.listOftypes = res.data
+      })
+      .catch((err) => {
+        console.log(err + "errore")
       })
     }
+    
   },
+
   mounted(){
     this.getApi()
   }
@@ -28,8 +41,8 @@ export default {
 
 <template>
 
-<select class="form-select form-select-sm" aria-label="Small select example">
-  <option @click="$emit('searchTypeGo')" v-for="(type, index) in store.listOftypes" :key="`type${index}`" value="1">{{ type.archetype_name }}</option>
+<select @change="changeType" v-model="store.selectedType" class="form-select form-select-sm" aria-label="Small select example">
+  <option @click="$emit('searchTypeGo')" v-for="(type, index) in store.listOftypes" :key="`type${index}`" :value="type.archetype_name">{{ type.archetype_name }}</option>
 </select>
   
 
