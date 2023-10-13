@@ -27,7 +27,11 @@ export default {
       } else {
         this.url = this.store.apiUrl + "?archetype=" + this.store.selectedType;
       }
-      console.log(this.url)
+      axios.get(this.url)
+      .then((response)=> {
+        store.cardList = response.data.data;
+        console.log(store.cardList)
+      })
       
     }
   },
