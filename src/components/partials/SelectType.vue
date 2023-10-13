@@ -31,7 +31,7 @@ export default {
 
 <select class="form-select form-select-sm" aria-label="Small select example">
   <option selected>Select type</option>
-  <option value="1">One</option>
+  <option v-for="(type, index) in store.listOftypes" :key="`type${index}`" value="1">{{ type.archetype_name }}</option>
 </select>
   
 
