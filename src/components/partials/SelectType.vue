@@ -24,6 +24,7 @@ export default {
       axios.get(store.apiUrlType)
       .then((res) => {
         store.listOftypes = res.data
+        console.log(store.listOftypes)
       })
       .catch((err) => {
         console.log(err + "errore")
