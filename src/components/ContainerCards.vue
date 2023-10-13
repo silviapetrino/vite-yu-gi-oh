@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import singolCard from './partials/singolCard.vue';
 import { store } from '../data/store';
 import SelectType from './partials/SelectType.vue';
@@ -8,7 +9,8 @@ export default {
   name: "card-container",
   components: {
     singolCard,
-    SelectType
+    SelectType,
+    
 
   },
   data(){
@@ -18,8 +20,24 @@ export default {
   },
   methods: {
     filterTypeSelected() {
+      let url = this.store.apiUrl;
+
+      if(this.store.selectedType === " ") {
+        this.url = this.store.apiUrl 
+      } else {
+        this.url = this.store.apiUrl + "?archetype=" + this.store.selectedType;
+      }
+
+      axios.get(url)
+      .then((response) => {
+        
+      } )
       
     }
+  },
+
+  mounted(){
+    this.filterTypeSelected()
   }
  
  

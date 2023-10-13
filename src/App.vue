@@ -4,7 +4,7 @@
 import Header from './components/Header.vue';
 import ContainerCards from './components/ContainerCards.vue';
 import loader from './components/partials/loader.vue';
-import SelectType from './components/partials/SelectType.vue';
+
 
 import { store } from './data/store';
 import axios from 'axios';

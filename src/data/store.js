@@ -6,5 +6,5 @@ export const store = reactive({
   isLoading: true,
   apiUrlType: "https://db.ygoprodeck.com/api/v7/archetypes.php",
   listOftypes: [],
-  selectedType: null
+  selectedType: " "
 })
