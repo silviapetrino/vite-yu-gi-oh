@@ -1,17 +1,24 @@
 <script>
 import singolCard from './partials/singolCard.vue';
 import { store } from '../data/store';
+import SelectType from './partials/SelectType.vue';
 
 
 export default {
   name: "card-container",
   components: {
-    singolCard
+    singolCard,
+    SelectType
 
   },
   data(){
     return {
       store
+    }
+  },
+  methods: {
+    filterTypeSelected() {
+      
     }
   }
  
@@ -21,8 +28,9 @@ export default {
 
 
 <template>
-
+<SelectType @type-selected="filterTypeSelected" />
   <div class="container">
+    
     <div class="row">
 
       <singolCard v-for="singolCard in store.cardList" :key="singolCard.id"

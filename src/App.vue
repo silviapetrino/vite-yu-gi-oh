@@ -15,7 +15,7 @@ import axios from 'axios';
       Header,
       ContainerCards,
       loader,
-      SelectType
+      
 
     },
     data(){
@@ -58,7 +58,7 @@ import axios from 'axios';
 
   <Header />
   <loader v-if="store.isLoading" />
-  <SelectType />
+
   <ContainerCards />
 
 </template>
