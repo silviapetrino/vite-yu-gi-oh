@@ -2,10 +2,12 @@
 import singolCard from './partials/singolCard.vue';
 import { store } from '../data/store';
 
+
 export default {
   name: "card-container",
   components: {
     singolCard
+
   },
   data(){
     return {
@@ -44,7 +46,7 @@ export default {
 
 
 .container {
-  margin: 100px auto;
+  margin: 60px auto;
   width: 80%;
   background-color: rgb(255, 255, 255);
   .row {
