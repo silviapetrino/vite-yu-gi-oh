@@ -1,8 +1,28 @@
 
 
 <script>
+import axios from 'axios';
+import { store } from '../../data/store';
 export default {
-  name: "select-type-bar"
+  name: "select-type-bar",
+  data(){
+    return{
+      store
+    }
+  },
+
+  methods: {
+    getApi() {
+      axios.get(store.apiUrlType)
+      .then((res) => {
+        store.listOftypes = res.data
+        console.log(store.listOftypes)
+      })
+    }
+  },
+  mounted(){
+    this.getApi()
+  }
 }
 </script>
 
@@ -12,8 +32,6 @@ export default {
 <select class="form-select form-select-sm" aria-label="Small select example">
   <option selected>Select type</option>
   <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
 </select>
   
 

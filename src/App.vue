@@ -3,9 +3,11 @@
 
 import Header from './components/Header.vue';
 import ContainerCards from './components/ContainerCards.vue';
+import loader from './components/partials/loader.vue';
+import SelectType from './components/partials/SelectType.vue';
+
 import { store } from './data/store';
 import axios from 'axios';
-import loader from './components/partials/loader.vue';
 
   export default {
     name: "AppVue",
@@ -13,6 +15,7 @@ import loader from './components/partials/loader.vue';
       Header,
       ContainerCards,
       loader,
+      SelectType
 
     },
     data(){
@@ -33,7 +36,7 @@ import loader from './components/partials/loader.vue';
       }) 
         .then((result) => {
           store.cardList = result.data.data;
-          console.log(store.cardList);
+          // console.log(store.cardList);
           store.isLoading = false
         })
         .catch((error) => {
@@ -56,6 +59,7 @@ import loader from './components/partials/loader.vue';
 
   <Header />
   <loader v-if="store.isLoading" />
+  <SelectType />
   <ContainerCards />
 
 </template>

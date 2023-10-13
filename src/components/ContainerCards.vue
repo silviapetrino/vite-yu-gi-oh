@@ -13,10 +13,8 @@ export default {
     return {
       store
     }
-  },
-  mounted(){
-    console.log(singolCard.name)
   }
+ 
  
 }
 </script>
